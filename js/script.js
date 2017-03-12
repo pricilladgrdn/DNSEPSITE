@@ -1,26 +1,28 @@
 $(function () {
     var frameNumber = 0, // start video at frame 0
-    // lower numbers = faster playback
-    playbackConst = 10, 
-    // get page height from video duration
+    // number of pixels to scroll for 1 second of video
+    playbackConst = 200, 
+    // get page height
     setHeight = document.getElementById("set-height"),
     //number of video loops
     loops = 10,
     // select video element         
-    //vid = document.getElementById('v0'); 
-    vid = $('#v0')[0]; // jquery option
+    vid = $('#v0')[0];
 
-   vid.pause();
+    // pause video
+    vid.pause();
 
-    // dynamically set the page height according to video length
+    // dynamically set the page height according to video length and number of loops
     vid.addEventListener('loadedmetadata', function() {
-      setHeight.style.height = Math.floor(vid.duration) * playbackConst * loops + "px";
+        setHeight.style.height = Math.floor(vid.duration) * playbackConst * loops + "px";
     }); 
 
+    // called in loop
     function scrollPlay(){  
-      var frameNumber  = (window.pageYOffset/playbackConst) % vid.duration;
-      vid.currentTime  = frameNumber;
-      window.requestAnimationFrame(scrollPlay);
+        //set video time
+        var frameNumber  = (window.pageYOffset/playbackConst) % vid.duration;
+        vid.currentTime  = frameNumber;
+        window.requestAnimationFrame(scrollPlay);
     }
 
     window.requestAnimationFrame(scrollPlay);
