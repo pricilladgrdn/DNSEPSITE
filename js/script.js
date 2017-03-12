@@ -3,7 +3,9 @@ $(function () {
     // lower numbers = faster playback
     playbackConst = 200, 
     // get page height from video duration
-    setHeight = document.getElementById("set-height"), 
+    setHeight = document.getElementById("set-height"),
+    //number of video loops
+    loops = 10,
     // select video element         
     //vid = document.getElementById('v0'); 
     vid = $('#v0')[0]; // jquery option
@@ -12,11 +14,12 @@ $(function () {
 
     // dynamically set the page height according to video length
     vid.addEventListener('loadedmetadata', function() {
-      setHeight.style.height = Math.floor(vid.duration) * playbackConst + "px";
+      setHeight.style.height = Math.floor(vid.duration) * playbackConst * loops + "px";
     });
 
     function scrollPlay(){  
-      var frameNumber  = window.pageYOffset/playbackConst;
+      var frameNumber  = (window.pageYOffset/playbackConst) % vid.duration;
+      console.log(frameNumber);
       vid.currentTime  = frameNumber;
       window.requestAnimationFrame(scrollPlay);
     }
