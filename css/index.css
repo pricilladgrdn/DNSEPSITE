@@ -1,0 +1,31 @@
+#v0{
+  position: fixed ;
+  top: 0  ;
+  left: 0  ;
+  width: 100%;
+}
+
+#set-height {
+  display: block;
+}
+
+/*.content {
+  opacity:0;
+  position: fixed;
+  top: 50%;
+  right: 0;
+  left: 0;
+  z-index: 99;
+  display: block;
+  background: #fff;
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  transform: translateY(0%);
+  transition: 0.7s ease-in-out all;
+}
+
+.content.active {
+  opacity: 1;
+  transform: translateY(-100%);
+} */
