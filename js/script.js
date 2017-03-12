@@ -1,7 +1,7 @@
 $(function () {
     var frameNumber = 0, // start video at frame 0
     // lower numbers = faster playback
-    playbackConst = 200, 
+    playbackConst = 10, 
     // get page height from video duration
     setHeight = document.getElementById("set-height"),
     //number of video loops
@@ -15,11 +15,10 @@ $(function () {
     // dynamically set the page height according to video length
     vid.addEventListener('loadedmetadata', function() {
       setHeight.style.height = Math.floor(vid.duration) * playbackConst * loops + "px";
-    });
+    }); 
 
     function scrollPlay(){  
       var frameNumber  = (window.pageYOffset/playbackConst) % vid.duration;
-      console.log(frameNumber);
       vid.currentTime  = frameNumber;
       window.requestAnimationFrame(scrollPlay);
     }
