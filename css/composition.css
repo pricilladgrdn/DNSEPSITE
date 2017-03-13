@@ -9,27 +9,26 @@ url('../font/spina-regular-regular-webfont.svg#spina-regularregular') format('sv
     font-weight: normal;
     font-style: normal;
 }*/
-	
+body{
+	background-color: black;
+}
 
 .boite{
 	/*border: solid 2px #0F0;
 	padding: 10px;*/
 	font-family: 'Karla', sans-serif;
-	z-index: -1;		
+	z-index: -1;
+
 }
 
 /* M E N U  P A G E  D ' A C C U E I L */
 /* M E N U  P A G E  D ' A C C U E I L */
 
-#prenom{
-	top:2%;
-	left:2%;
+#menu{
+	bottom:2%;
+	left:1%;
 	position: fixed;
-	font-size: 16px;
-
-	/*position: fixed;
-	top: 40px;
-	left: 5%;*/
+	font-size: 10px;
 }
 
 #infos{
