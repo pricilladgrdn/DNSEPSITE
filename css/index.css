@@ -9,6 +9,13 @@
   display: block;
 }
 
+
+#menu{
+  font-family: 'Karla', sans-serif;
+  font-size: 19px;
+}
+
+
 /*.content {
   opacity:0;
   position: fixed;

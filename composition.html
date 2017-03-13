@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<title>Éditer l'espace — Imprimer l'exposition</title>
+	<link rel="stylesheet" href="css/composition.css">
+	<link rel="icon" type="image/png" href="Images/favicon.png" />
+	<script type="text/javascript" src="script/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="script/jquery-ui-min.js"></script>
+	<script type="text/javascript" src="script/ga.js"></script>
+	<script type="text/javascript" src="script/interact.min.js"></script>
+	<link href='https://fonts.googleapis.com/css?family=Karla:400,400italic,700italic,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<div id="prenom" class="boite">
+		<a href="http://www.pricilladegardin.xyz">Éditer l'espace — Imprimer l'exposition</a>
+	</div>
+	<section>
+		<article>
+			<div id="loading"></div>
+			<ul class="images">
+
+			
+				<li class="draggable">
+					<img src="Images/SITE_unvingt.png" alt="Exposition Un vingtième, une exposition imprimée de Yann Sérandour par huit étudiants de la Hear"/>
+	                <a href="projet_unvingt.html">&#10697;</a>
+				</li>
+				<li class="draggable">
+					<img src="Images/SITE_surkrut.png" alt="Blog Sürkrüt atelier de communication graphique HEAR"/>
+	                <a href="projet_surkrut.html">&#10697;</a>  
+				</li>
+				<li>
+					<img src="Images/SITE_tourisme.png" alt="Pricilla Degardin"/>
+	                <a href="projet_tourisme.html">&#10697;</a>  
+				</li>
+				<li class="draggable">
+					<img src="Images/SITE_data.jpg" alt="Projet Data"/>
+	                <a href="projet_data.html">&#10697;</a>  
+				</li>
+		
+				<li class="draggable">
+					<img src="Images/SITE_germinal.jpg" alt="Germinal spectacle contemporain"/>
+	                <a href="projet_germinal.html">&#10697;</a>  
+				</li>
+				<li class="draggable">
+					<img src="Images/SITE_bbb.png" alt="Exposition Collective Collection"/>				
+	                <a href="projet_bbb.html">&#10697;</a>  
+				</li>
+				<li>
+					<img src="Images/SITE_acrossquebec.png" alt="Pricilla Degardin"/>
+	                <a href="projet_acrossquebec.html">&#10697;</a>  
+				</li>
+	            <li class="draggable">
+					<img src="Images/SITE_standjpo.jpg" alt="Stand journées portes ouvertes isdaT"/>
+	                <a href="projet_standjpo.html">&#10697;</a>  
+				</li>
+			
+	            <li class="draggable">
+					<img src="Images/SITE_motif.jpg" alt="Motifs"/>				
+	                <a href="projet_motif.html">&#10697;</a>  
+				</li>
+
+				<li class="draggable">
+					<img src="Images/SITE_papillon.png" alt="Papillon(s)"/>				
+	                <a href="projet_papillon.html">&#10697;</a>  
+				</li>
+				<li class="draggable">
+					<img src="Images/SITE_photocemes.jpg" alt="CÉMÉS"/>				
+	                <a href="projet_photocemes.html">&#10697;</a>  
+				</li>
+				<li class="draggable">
+					<img src="Images/SITE_sieste.png" alt="typographie les siestes éléctroniques"/>
+	                <a href="projet_sieste.html">&#10697;</a>  
+				</li>
+				<li class="draggable">
+					<img src="Images/SITE_lettrage.gif" alt="Lettrages"/>				
+	                <a href="projet_lettrage.html">&#10697;</a>  
+				</li>
+	            <li class="draggable">
+					<img src="Images/SITE_kertesz.png" alt="Exposition André Kertész"/>				
+	                <a href="projet_kertesz.html">&#10697;</a>  
+				</li>
+ 				<li class="draggable">
+					<img src="Images/SITE_chambord.png" alt="Les Folies de Chambord"/>				
+	                <a href="projet_chambord.html">&#10697;</a>  
+				</li>
+				<li class="draggable">
+					<img src="Images/SITE_interdit.png" alt="Collection DVD Interdit"/>				
+	                <a href="projet_interdit.html">&#10697;</a>  
+				</li>
+				<li class="draggable">
+					<img src="Images/SITE_horsdoeuvre.jpg" alt="Journal Hors d'Œuvre"/>				
+	                <a href="projet_horsdoeuvre.html">&#10697;</a>  
+				</li>
+				<li class="draggable">
+					<img src="Images/SITE_transhumance.jpg" alt="Festival Transhumance"/>				
+	                <a href="projet_transhumance.html">&#10697;</a>  
+				</li>
+				<li class="draggable">
+					<img src="Images/SITE_secret.gif" alt="La Chasse au Secret"/>				
+	                <a href="projet_secret.html">&#10697;</a>  
+				</li>
+				<li class="draggable">
+					<img src="Images/SITE_cartes.png" alt="Jeu de cartes subversives"/>				
+	                <a href="projet_cartes.html">&#10697;</a>  
+				</li>
+				<li class="draggable">
+					<img src="Images/SITE_nuagedidactique.png" alt="Nuage Didactique"/>				
+	                <a href="projet_nuagedidactique.html">&#10697;</a>
+				</li>
+	            <li class="draggable">
+					<img src="Images/SITE_nuagepoetique.png" alt="Nuage Poétique"/>				
+	                <a href="projet_nuagepoetique.html">&#10697;</a>  
+				</li>
+			</ul>
+		</article>
+	</section>
+
+
+
+
+	<script>
+
+		function randomize(min, max) {
+    		return Math.floor((Math.random() * (max - min + 1)) + min);
+		}
+
+		window.onload = function() {
+			setTimeout(function() {
+				$('#loading').hide();
+				$('ul.images li').each(function() {
+						var w = Math.floor($(this).width() / $(window).width() * 100);
+						var h = Math.floor($(this).height() / $(window).height() * 100);
+						$(this).css('top', randomize(10, 90-h) + '%')
+							   .css('left', randomize(10, 90-w) + '%')
+							   .css('z-index', randomize(50, 100))
+							   .css('visibility', 'visible');
+				});
+			}, 100);
+		}
+
+		if ('ontouchstart' in window) {
+			$('#prenom').css('font-size', 1);
+			$('#infos').css('font-size', 27);
+			// target elements with the "draggable" class
+			interact('.draggable')
+			.draggable({
+			// enable inertial throwing
+			inertia: false,
+			// keep the element within the area of it's parent
+			restrict: {
+			  restriction: "parent",
+			  endOnly: true,
+			  elementRect: { top: 0, left: 0, bottom: 1, right: 1 }
+			},
+			// enable autoScroll
+			autoScroll: true,
+
+			// call this function on every dragmove event
+			onmove: dragMoveListener,
+			// call this function on every dragend event
+			onend: function (event) {
+			}
+			});
+
+			function dragMoveListener (event) {
+			var target = event.target,
+			    // keep the dragged position in the data-x/data-y attributes
+			    x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
+			    y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
+
+			// translate the element
+			target.style.webkitTransform =
+			target.style.transform =
+			  'translate(' + x + 'px, ' + y + 'px)';
+
+			// update the posiion attributes
+			target.setAttribute('data-x', x);
+			target.setAttribute('data-y', y);
+			}
+
+			// this is used later in the resizing and gesture demos
+			window.dragMoveListener = dragMoveListener;
+		} else {
+
+			$('ul.images li').mousedown(function() {
+				$(this).css('z-index', 100).siblings().each(function() {
+					style = window.getComputedStyle($(this)[0]);
+					zindex = style.getPropertyValue('z-index');
+					if(zindex > 0)
+						$(this).css('z-index', zindex - 1);
+				});
+			}).draggable();
+		}
+		</script>
+</body>
+</html>
