@@ -1,38 +1,43 @@
-#v0{
-  position: fixed ;
-  top: 0  ;
-  left: 0  ;
+body {
   width: 100%;
+  height:100%;
+  margin:0px;
+  background-color: black;
 }
 
-#set-height {
-  display: block;
+a {
+  color:black;
+}
+
+/* B A N D E A U  I N T R O */
+
+.menu {
+  border:solid 1px red;
+  margin-bottom: 2%;
+  text-decoration: none;
+}
+
+.menu a {
+  color: white;
+  font-size: 12px;
 }
 
 
-#menu{
-  font-family: 'Karla', sans-serif;
-  font-size: 19px;
+#titre {
+  border:solid 1px red;
+  width: 100%;
+  height:100%;
+
 }
 
-
-/*.content {
-  opacity:0;
-  position: fixed;
-  top: 50%;
-  right: 0;
-  left: 0;
-  z-index: 99;
-  display: block;
-  background: #fff;
-  width: 50%;
-  margin: 0 auto;
-  text-align: center;
-  transform: translateY(0%);
-  transition: 0.7s ease-in-out all;
+#titre a:link {
+  color: white;
+  font-size: 100px;
+  text-decoration: none;
 }
 
-.content.active {
-  opacity: 1;
-  transform: translateY(-100%);
-} */
+#titre a:hover {
+  text-decoration: underline;
+  color: white;
+  font-size: 100px;
+}
