@@ -8,13 +8,14 @@ body {
 a {
   color:white;
   text-decoration: none;
+  font-family: arial;
 }
 
 
 /* T I T R E  G É N É R A L */
 
 #titre {
-  border:solid 1px red;
+  /*border:solid 1px red;*/
   width: 100%;
   height:100%;
   font-family: arial;
@@ -36,8 +37,9 @@ a {
 /* M E N U  B A S */
 
 .menu {
-  border:solid 1px red;
+  /*border:solid 1px red;*/
   bottom: 1%;
+  left:1%;
   position: fixed;
 }
 
@@ -58,7 +60,13 @@ a {
           transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   position: fixed;
-
+  overflow: scroll;
 }
 
+.cadre-menu p{
+  font-family: arial;
+  color:black;
+  font-size: 20px;
+  padding: 2%;
 
+}
