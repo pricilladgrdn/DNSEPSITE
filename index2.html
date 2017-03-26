@@ -4,63 +4,116 @@
 	<meta charset="utf-8">
 	<title>Éditer l'espace — Imprimer l'exposition</title>
 	<link rel="stylesheet" href="css/index2.css">
+	<link rel="icon" type="image/png" href="Images/favicon.png" />
 	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
-	<script type="text/javascript" src="js/jquery.tagcanvas.min.js" ></script>
+	<script type="text/javascript" src="script/jquery-ui-min.js"></script>
+	<script type="text/javascript" src="script/ga.js"></script>
+	<script type="text/javascript" src="script/interact.min.js"></script>
 	<link href='https://fonts.googleapis.com/css?family=Karla:400,400italic,700italic,700' rel='stylesheet' type='text/css'>
 </head>
-
 <body>
-	<div id="myCanvasContainer">
-		<canvas id="myCanvas">
-			<p>oups</p>
-		</canvas>
+	<div id="menu">
+		<a href="#">&#9898;</a>
 	</div>
+	<section>
+		<article>
+			<div id="loading"></div>
+			<ul class="images">
+				<li class="draggable">
+					<img src="images/sol1.png"/>
+				</li>
+				<li class="draggable">
+					<img src="images/sol2.png"/>
+				</li>
+				<li>
+					<img src="images/sol3.png"/>
+				</li>
+				<li class="draggable">
+					<img src="images/sol4.png"/>  
+				</li>
+				<li class="draggable">
+					<img src="images/sol5.png"/>
+				</li>
+			</ul>
+		</article>
+	</section>
 
-	<div id="tags">
-		<ul>
-			<li><a><img src=images/electron1.png></a></li>
-			<li><a><img src=images/electron2.png></a></li>
-			<li><a><img src=images/electron3.png></a></li>
-			<li><a><img src=images/electron4.png></a></li>
-			<li><a><img src=images/electron5.png></a></li>
-			<li><a><img src=images/electron6.png></a></li>
-		</ul>
-	</div>
 
-	<script type="text/javascript">
-		$(document).ready(function() {
-			if( ! $('#myCanvas').tagcanvas({
-				textColour : '#ffffff',
-				outlineThickness : 0,
-				shape: 'sphere',
-				maxSpeed : 0.06,
-				depth : 0.5, 
-				zoomStep : 0,
-				wheelZoom : false,
-				zoom : 1.0,
-				clickToFront : 400,
-				noSelect : true,
-				//noMouse  : true,
-				centreImage : 'Images/noyau.jpg'
-			}, 'tags')) {
-				// TagCanvas failed to load
-				$('#myCanvasContainer').hide();
+
+
+	<script>
+
+		function randomize(min, max) {
+    		return Math.floor((Math.random() * (max - min + 1)) + min);
+		}
+
+		window.onload = function() {
+			setTimeout(function() {
+				$('#loading').hide();
+				$('ul.images li').each(function() {
+						var w = Math.floor($(this).width() / $(window).width() * 100);
+						var h = Math.floor($(this).height() / $(window).height() * 100);
+						$(this).css('top', randomize(10, 90-h) + '%')
+							   .css('left', randomize(10, 90-w) + '%')
+							   .css('z-index', randomize(50, 100))
+							   .css('visibility', 'visible');
+				});
+			}, 100);
+		}
+
+		if ('ontouchstart' in window) {
+			$('#prenom').css('font-size', 1);
+			$('#infos').css('font-size', 27);
+			// target elements with the "draggable" class
+			interact('.draggable')
+			.draggable({
+			// enable inertial throwing
+			inertia: false,
+			// keep the element within the area of it's parent
+			restrict: {
+			  restriction: "parent",
+			  endOnly: true,
+			  elementRect: { top: 0, left: 0, bottom: 1, right: 1 }
+			},
+			// enable autoScroll
+			autoScroll: true,
+
+			// call this function on every dragmove event
+			onmove: dragMoveListener,
+			// call this function on every dragend event
+			onend: function (event) {
 			}
-		// your other jQuery stuff here...
-		});
+			});
 
-	(function() {
-	    var canvas = document.getElementById('myCanvas'),
-	        context = canvas.getContext('2d');
+			function dragMoveListener (event) {
+			var target = event.target,
+			    // keep the dragged position in the data-x/data-y attributes
+			    x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
+			    y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
 
-	    // resize the canvas to fill browser window dynamically
-	    window.addEventListener('resize', resizeCanvas, false);
+			// translate the element
+			target.style.webkitTransform =
+			target.style.transform =
+			  'translate(' + x + 'px, ' + y + 'px)';
 
-    	function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-	    }
-	    resizeCanvas();
-	})();
-	</script>
+			// update the posiion attributes
+			target.setAttribute('data-x', x);
+			target.setAttribute('data-y', y);
+			}
+
+			// this is used later in the resizing and gesture demos
+			window.dragMoveListener = dragMoveListener;
+		} else {
+
+			$('ul.images li').mousedown(function() {
+				$(this).css('z-index', 100).siblings().each(function() {
+					style = window.getComputedStyle($(this)[0]);
+					zindex = style.getPropertyValue('z-index');
+					if(zindex > 0)
+						$(this).css('z-index', zindex - 1);
+				});
+			}).draggable();
+		}
+		</script>
 </body>
+</html>

@@ -3,6 +3,7 @@
   top: 0  ;
   left: 0  ;
   width: 100%;
+  z-index: 1;
 }
 
 #set-height {
@@ -12,7 +13,7 @@
 /* M E N U  B A S */
 
 .menu {
-  border:solid 1px red;
+  /*border:solid 1px red;*/
   z-index: 2;
   bottom: 1%;
   left:1%;
@@ -23,8 +24,6 @@
 
 .menu a {
   color: black;
-  font-size: 12px;
-  font-family: 'Heebo', sans-serif;
   text-decoration: none;
 }
 
@@ -32,9 +31,82 @@
   text-decoration: underline;
 }
 
+.menu span {
+  margin-left: 10px;
+  font-size: 13px;
+  font-family: 'Heebo', sans-serif;
+}
 
+/* C A D R E  M E N U */
 
+.cadre-menu {
+  border:solid 10px black;
+  z-index:3;
+  width: 700px;
+  height: 450px;
+  background-color: white;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  position: fixed;
+  overflow: scroll;
+  /*visibility: hidden;*/
+}
 
+.cadre-menu p{
+  font-family: 'Heebo', sans-serif;
+  color:black;
+  font-size: 22px; 
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+.cadre-menu a {
+  font-family: 'Heebo', sans-serif;
+  text-decoration: none;
+  font-size: 22px;
+  color:black;
+}
+
+.cadre-menu a:hover {
+  font-style: italic;
+}
+
+/* F E U I L L E  D E  S A L L E */
+
+.feuille-salle {
+  z-index:3;
+  width: 350px;
+  height: 450px;
+  background-color: white;
+  top: 50%;
+  left:22.5%;
+  transform: translate(0, -50%);
+  -webkit-transform: translate(0, -50%);
+  position: fixed;
+  overflow: scroll;
+  /*visibility: hidden;*/
+}
+
+.feuille-salle p{
+  font-family: 'Heebo', sans-serif;
+  color:black;
+  font-size: 14px; 
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+.feuille-salle a {
+  font-family: 'Heebo', sans-serif;
+  text-decoration: none;
+  font-size: 14px;
+  color:black;
+}
+
+.feuille-salle a:hover {
+  font-style: italic;
+}
 
 
 /*.content {
