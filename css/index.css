@@ -5,55 +5,53 @@ body {
   background-color: black;
 }
 
-a {
-  color:white;
-  text-decoration: none;
-  font-family: arial;
-}
-
-
-/* T I T R E  G É N É R A L */
+/* T I T R E */
 
 #titre {
   /*border:solid 1px red;*/
   width: 100%;
   height:100%;
-  font-family: arial;
+  margin-top: 1.5%;
   font-size: 100px;
+  line-height: 150px;
+  color: white;
   transform: rotate(-8deg) skew(-8deg, 0);
   -webkit-transform: rotate(-8deg) skew(-8deg, 0);
 }
 
-#titre a:link {
-  color: white;
+#titre a, a:link {
+  color:white;
   text-decoration: none;
+  font-family: arial;
 }
 
 #titre a:hover {
-  color: white;
   text-decoration: underline;
 }
 
-/* M E N U  B A S */
-
-.menu {
-  /*border:solid 1px red;*/
-  bottom: 1%;
-  left:1%;
-  position: fixed;
+#t1 {
+  margin-left: 100px;
 }
 
-.menu a {
-  color: white;
-  font-size: 12px;
+#t2 {
+  margin-left: 400px;
 }
 
-/* C A R R É  M E N U */
+#t3 {
+  margin-left: 200px;
+}
 
-.cadre-menu{
+#t4 {
+  margin-left: 500px;
+}
+
+/* C A D R E  M E N U */
+
+.cadre-menu {
+  border:solid 10px black;
   z-index:2;
   width: 700px;
-  height: 500px;
+  height: 450px;
   background-color: white;
   top: 50%;
   left:50%;
@@ -65,9 +63,20 @@ a {
 }
 
 .cadre-menu p{
-  font-family: arial;
+  font-family: 'Heebo', sans-serif;
   color:black;
-  font-size: 20px;
-  padding: 2%;
+  font-size: 22px; 
+  padding-left: 4%;
+  padding-right: 4%;
+}
 
+.cadre-menu a {
+  font-family: 'Heebo', sans-serif;
+  text-decoration: none;
+  font-size: 22px;
+  color:black;
+}
+
+.cadre-menu a:hover {
+  font-style: italic;
 }

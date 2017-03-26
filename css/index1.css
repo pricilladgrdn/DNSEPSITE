@@ -9,11 +9,32 @@
   display: block;
 }
 
+/* M E N U  B A S */
 
-#menu{
-  font-family: 'Karla', sans-serif;
-  font-size: 19px;
+.menu {
+  border:solid 1px red;
+  z-index: 2;
+  bottom: 1%;
+  left:1%;
+  position: fixed;
+  color: black;
+  font-family: 'Heebo', sans-serif;
 }
+
+.menu a {
+  color: black;
+  font-size: 12px;
+  font-family: 'Heebo', sans-serif;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
+
+
+
 
 
 /*.content {
