@@ -1,0 +1,44 @@
+body {
+	background-color: black;
+}
+
+li a, li a:link, li a:visited {
+	position:absolute;
+	top:0;
+	right:0;
+	text-decoration:none;
+	font-family: 'Karla', sans-serif;
+	font-size: 19px;
+	text-align: center;
+	width: 22px;
+	height: 22px;
+	color:white;
+	background-color: black;
+	display: none;
+}
+
+li:hover a {
+	display: block;
+}
+
+li a:hover {
+	color:white;
+	background-color: #1AFBB8;
+}
+
+li {
+	height:auto;
+	width:auto;
+	list-style-type: none;
+	position:absolute;
+	cursor:move;
+	visibility:hidden;
+}
+
+
+
+
+
+
+
+

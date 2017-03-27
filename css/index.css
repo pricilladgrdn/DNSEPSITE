@@ -44,39 +44,3 @@ body {
 #t4 {
   margin-left: 500px;
 }
-
-/* C A D R E  M E N U */
-
-.cadre-menu {
-  border:solid 10px black;
-  z-index:2;
-  width: 700px;
-  height: 450px;
-  background-color: white;
-  top: 50%;
-  left:50%;
-  transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  position: fixed;
-  overflow: scroll;
-  visibility: hidden;
-}
-
-.cadre-menu p{
-  font-family: 'Heebo', sans-serif;
-  color:black;
-  font-size: 22px; 
-  padding-left: 4%;
-  padding-right: 4%;
-}
-
-.cadre-menu a {
-  font-family: 'Heebo', sans-serif;
-  text-decoration: none;
-  font-size: 22px;
-  color:black;
-}
-
-.cadre-menu a:hover {
-  font-style: italic;
-}
