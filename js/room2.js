@@ -4,10 +4,6 @@ $(document).ready(function() {
 		return Math.floor((Math.random() * (max - min + 1)) + min);
 	}
 
-	console.log($(window).width());
-	console.log($(window).height());
-
-
 	$('ul.images li').each(function() {
 		var w = Math.floor($(this).width() / $(window).width() * 100);
 		var h = Math.floor($(this).height() / $(window).height() * 100);
