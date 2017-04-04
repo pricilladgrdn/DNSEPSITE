@@ -6,6 +6,7 @@ $(document).ready(function() {
 
 		$(this).mouseleave(function() {
 			$(this).children("audio").get(0).pause();
+			$(this).children("audio").get(0).currentTime = 0;
 		});
 	});
 });
