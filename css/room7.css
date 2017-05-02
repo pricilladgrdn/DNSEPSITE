@@ -1,0 +1,21 @@
+body {
+	width: 100%;
+	height:100%;
+	margin:0px;
+	background-color: black;
+}
+
+
+#contenu {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    white-space:nowrap;
+}
+
+#contenu img {
+    display: inline-block;
+    width:auto;
+    
+    max-height: 100vh;
+}
