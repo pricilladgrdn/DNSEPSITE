@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Réflexion</title>
-	<link rel="stylesheet" href="../css/room2.css">
+	<link rel="stylesheet" href="../css/reflexion.css">
 	<link rel="stylesheet" href="../css/menu.css">
 	<script type="text/javascript" src="../js/jquery-2.1.1.min.js"></script>
 	<script type="text/javascript" src="../js/jquery-ui-min.js"></script>
@@ -13,35 +13,50 @@
 	<link href='https://fonts.googleapis.com/css?family=Karla:400,400italic,700italic,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
+
+<!-- M E N U -->
+
+<div class="dropdown">
+	<img src="../media/bouton-menu-white.png">
+	<div class="dropdown-content" id="white">
+		<a id="menulink" href="#">Parcourir</a>
+		<a id="feuillelink" href="#">Feuille de salle</a>
+		<a id="#" href="#">Éditer</a>
+	</div>
+</div>
+
+<!-- C O N T E N U -->
+
 	<ul class="images">
 		<li class="draggable">
-			<img src="../media/sol1.png"/>
+			<img src="../media/room_reflexion/sol1.png"/>
 		</li>
 		<li class="draggable">
-			<img src="../media/sol2.png"/>
+			<img src="../media/room_reflexion/sol2.png"/>
 		</li>
 		<li class="draggable">
-			<img src="../media/sol3.png"/>
+			<img src="../media/room_reflexion/sol3.png"/>
 		</li>
 		<li class="draggable">
-			<img src="../media/sol4.png"/>  
+			<img src="../media/room_reflexion/sol4.png"/>  
 		</li>
 		<li class="draggable">
-			<img src="../media/sol5.png"/>
+			<img src="../media/room_reflexion/sol5.png"/>
 		</li>
 	</ul>
 
+<!-- M E N U - S A L L E S -->
+
 	<div class="menu">
-		<p>
-			<a href="room1.html">SALLE 1 — Faire le tour</a></br>
-			<a href="room2.html">SALLE 2 — Réflexion</a></br>
-			<a href="room3.html">SALLE 3 — En chantier</a></br>
-			<a href="room4.html">SALLE 4 — Contemplation</a></br>
-			<a href="room5.html">SALLE 5 — Représenter la collection</a></br> 
-			<a href="room6.html">SALLE 6 — Capture</a></br>
-			…
-		</p>
+			<a href="../index.html">Hall</a>
+			<a href="faireletour.html">Faire le tour</a>
+			<a href="reflexion.html">Réflexion</a>
+			<a href="room3.html">En chantier</a>
+			<a href="room4.html">Contemplation</a>  
+			<a href="editerlespace.html">Éditer l'espace</a>
 	</div>	
+
+<!-- F E U I L L E  D E  S A L L E  -->
 
 	<div class="description">
 		<p><i>Éditer l’espace — Imprimer l’exposition</i></br>
@@ -56,9 +71,5 @@
 		</p>
 	</div>
 
-	<div class="footer wht">
-		<a id="menulink" href="#"><img src="../media/bouton-menu-white.png"></a>
-		<a id="descriptionlink" href="#"><span>Feuille de salle</span></a>
-	</div>
 </body>
 </html>

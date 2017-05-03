@@ -5,7 +5,7 @@ $(document).ready(function() {
         if (menu.css('display') === 'none')
         {
             menu.show();
-        	$('.description').hide();
+        	$('.feuille').hide();
         }
         else
         {
@@ -13,17 +13,17 @@ $(document).ready(function() {
         }
     });
 
-    $('#descriptionlink').click(function(event) {
+    $('#feuillelink').click(function(event) {
     	event.preventDefault();
-    	var description = $('.description');
-        if (description.css('display') === 'none')
+    	var feuille = $('.feuille');
+        if (feuille.css('display') === 'none')
         {
-            description.show();
+            feuille.show();
             $('.menu').hide();
         }
         else
         {
-            description.hide();
+            feuille.hide();
         }
     });
 
@@ -38,14 +38,14 @@ $(document).ready(function() {
 	        menu.hide();
 	    }
 
-	    var description = $('.description');
-		var descriptionlink = $('#descriptionlink');
-	    if (!description.is(event.target) // if the target of the click isn't the container...
-	        && description.has(event.target).length === 0 // ... nor a descendant of the container
-	        && !descriptionlink.is(event.target)
-	        && descriptionlink.has(event.target).length === 0) 
+	    var feuille = $('.feuille');
+		var feuillelink = $('#feuillelink');
+	    if (!feuille.is(event.target) // if the target of the click isn't the container...
+	        && feuille.has(event.target).length === 0 // ... nor a descendant of the container
+	        && !feuillelink.is(event.target)
+	        && feuillelink.has(event.target).length === 0) 
 	    {
-	        description.hide();
+	        feuille.hide();
 	    }
 	});
 });
