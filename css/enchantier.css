@@ -35,21 +35,6 @@ li {
 	visibility:hidden;
 }
 
-.print {
-	font-size:30px;
-	position: fixed;
-	height: 50px;
-	width: 100px;
-	top:5%;
-	left:90%;
-	color: #FF4C65;
-	background-color: #A7DBDB;
-	text-align: center;
-	vertical-align: middle;
-	line-height: 50px; 
-	cursor: pointer;
-}
-
 @media print{
 	@page {
 		size: landscape;
@@ -63,5 +48,4 @@ li {
 	li {
 		page-break-before: always;
 	}
-
 }
