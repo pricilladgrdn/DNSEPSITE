@@ -5,14 +5,22 @@ body {
   background-color: black;
 }
 
+@font-face {
+  font-family: '../font/bespoke43np9uelc8';
+  src: url('../font/bespoke-2-webfont.woff2') format('woff2'),
+       url('../font/bespoke-2-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* T I T R E */
 
 #titre {
-  /*border:solid 1px red;*/
   width: 100%;
   height:100%;
   margin-top: 1.5%;
-  font-size: 100px;
+  font-family: '../font/bespoke43np9uelc8';
+  font-size: 80px;
   line-height: 150px;
   color: white;
   transform: rotate(-8deg) skew(-8deg, 0);
@@ -22,11 +30,10 @@ body {
 #titre a, a:link {
   color:white;
   text-decoration: none;
-  font-family: arial;
 }
 
 #titre a:hover {
-  text-decoration: underline;
+
 }
 
 #t1 {
@@ -34,7 +41,7 @@ body {
 }
 
 #t2 {
-  margin-left: 400px;
+  margin-left: 500px;
 }
 
 #t3 {
@@ -42,5 +49,8 @@ body {
 }
 
 #t4 {
-  margin-left: 500px;
+  margin-left: 450px;
 }
+
+
+
