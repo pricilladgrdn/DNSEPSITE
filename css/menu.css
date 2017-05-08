@@ -15,7 +15,7 @@ body {
 /* M E N U */
 
 .dropdown {
-  z-index: 3;
+  z-index: 100;
   top: 2%;
   left:1%;
   position: fixed;
@@ -29,10 +29,7 @@ body {
 .dropdown-content {
     display: none;
     min-width: 160px;
-    z-index: 3;    
 }
-
-
 
 .dropdown:hover .dropdown-content {
     display:inline;

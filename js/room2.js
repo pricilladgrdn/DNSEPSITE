@@ -16,23 +16,12 @@ function getRotationDegrees(obj) {
 // http://stackoverflow.com/questions/3276467/adjusting-div-width-and-height-after-rotated
 jQuery.fn.rotate = function(degrees) {
 	degrees += getRotationDegrees($(this));
-	
+
     $(this).css({'-webkit-transform' : 'rotate('+ degrees +'deg)',
                  '-moz-transform' : 'rotate('+ degrees +'deg)',
                  '-o-transform' : 'rotate('+ degrees +'deg)',
                  '-ms-transform' : 'rotate('+ degrees +'deg)',
                  'transform' : 'rotate('+ degrees +'deg)'});
-
-    /*var parent = $(this).parent();
-    var h = parent.height();
-    var w = parent.width();
-    var t = $(this).css("top");
-    var l = $(this).css("left");
-
-    parent.height(w);
-    parent.width(h);
-    parent.css("top", t);
-    parent.css("left", l);*/
 
     return $(this);
 };
@@ -42,9 +31,13 @@ function randomize(min, max) {
 }
 
 $(document).ready(function() {
+	// PRINT
+	$(".print").click(function(){
+		window.print();
+	});
 
+	// ROTATION
 	var lastImage;
-
 	$(document).keydown(function() {
 	   	if(event.keyCode == 37) {  //prev key
 			lastImage.rotate(-90);
@@ -58,17 +51,18 @@ $(document).ready(function() {
 		var h = Math.floor($(this).height() / $(window).height() * 100);
 		$(this).css('top', randomize(10, 90-h) + '%')
 		   .css('left', randomize(10, 90-w) + '%')
-		   .css('z-index', randomize(50, 100))
+		   .css('z-index', randomize(50, 99))
 		   .css('visibility', 'visible');
 	});
 
+	//DRAGGABLE
 	if ('ontouchstart' in window) {
 		// target elements with the "draggable" class
 		interact('.draggable')
 		.draggable();
 	} else {
 		$('ul.images li').mousedown(function() {
-			$(this).css('z-index', 100).siblings().each(function() {
+			$(this).css('z-index', 99).siblings().each(function() {
 				style = window.getComputedStyle($(this)[0]);
 				zindex = style.getPropertyValue('z-index');
 				if(zindex > 0)

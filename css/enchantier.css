@@ -41,11 +41,7 @@ li {
 		writing-mode : tb-rl;
 	}
 
-	.print, .menu, .description, .footer{
-		display:none;
-	}
-
-	li {
-		page-break-before: always;
+	.dropdown, .menu, .feuille {
+		display:none !important;
 	}
 }
