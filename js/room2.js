@@ -16,6 +16,7 @@ function getRotationDegrees(obj) {
 // http://stackoverflow.com/questions/3276467/adjusting-div-width-and-height-after-rotated
 jQuery.fn.rotate = function(degrees) {
 	degrees += getRotationDegrees($(this));
+	
     $(this).css({'-webkit-transform' : 'rotate('+ degrees +'deg)',
                  '-moz-transform' : 'rotate('+ degrees +'deg)',
                  '-o-transform' : 'rotate('+ degrees +'deg)',
