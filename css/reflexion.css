@@ -2,6 +2,7 @@ body {
 	background-color: black;
 	width: 1587.4026px;
 	height:2229.9227px;
+	overflow:hidden;
 }
 
 li a, li a:link, li a:visited {
