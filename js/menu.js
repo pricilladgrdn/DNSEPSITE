@@ -1,11 +1,13 @@
 $(document).ready(function() {
     $('#menulink').click(function(event) {
     	event.preventDefault();
+        console.log("LA");
     	var menu = $('.menu');
+        var feuille = $('.feuille');
         if (menu.css('display') === 'none')
         {
             menu.show();
-        	$('.feuille').hide();
+        	feuille.hide();
         }
         else
         {
@@ -16,10 +18,12 @@ $(document).ready(function() {
     $('#feuillelink').click(function(event) {
     	event.preventDefault();
     	var feuille = $('.feuille');
+        var menu = $('.menu');
+
         if (feuille.css('display') === 'none')
         {
             feuille.show();
-            $('.menu').hide();
+            menu.hide();
         }
         else
         {
