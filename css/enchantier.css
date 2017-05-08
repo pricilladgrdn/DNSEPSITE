@@ -41,7 +41,7 @@ li {
 		writing-mode : tb-rl;
 	}
 
-	.print, .menu, .description, .footer{
+	.print, .dropdown .feuille{
 		display:none;
 	}
 
