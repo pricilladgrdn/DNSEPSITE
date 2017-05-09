@@ -2,6 +2,9 @@ body {
   width: 100%;
   height:100%;
   margin:0px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  list-style-type: none;
 }
 
 @font-face {
@@ -12,12 +15,13 @@ body {
   font-style: normal;
 }
 
-/* M E N U */
+/* M E N U  D É R O U L A N T */
 
 .dropdown {
   z-index: 100;
   top: 2%;
   left:1%;
+  height: 30px;
   position: fixed;
   display: inline;
   font-family: '../font/bespoke43np9uelc8';
@@ -50,13 +54,12 @@ body {
     color:white;
 }
 
-/* C A D R E  M E N U */
+/* C A D R E  M E N U  P A R C O U R I R */
 
 .menu {
-  /*border:solid 10px black;*/
   z-index:101;
-  width: 700px;
-  height: 450px;
+  width: 60%;
+  height: 70%;
   background-color: white;
   top: 50%;
   left:50%;
@@ -65,32 +68,57 @@ body {
   position: fixed;
   overflow: scroll;
   display:none;
-  padding:1%;
 }
 
-.menu a {
+/* C O N T E N U  M E N U  P A R C O U R I R */
+
+.contenu-menu {
+  width: 94%;
+  height: auto;
+  margin-left: 3%;
+  margin-bottom: 3%;
   font-family: '../font/bespoke43np9uelc8';
-  color:black;
-  font-size: 50px;
-  margin-right: 10px;
+  font-size: 20px;
 }
-.menu a:link {
-    text-decoration: none;
-  }
 
-.menu a:hover {
-  font-style: italic;
+.contenu-menu a:link, .contenu-menu a:visited {
+  text-decoration: none;
+  color: black;
 }
+
+.contenu-menu a:hover {
+  font-style: italic;
+  color: black;
+}
+
+/* C R É D I T  M E N U  P A R C O U R I R */
+
+p.credit, a.credit {
+font-family: '../font/bespoke43np9uelc8';
+font-size: 12px;
+text-align: center;
+color:black;
+}
+
+/* L I E N S  S A L L E S  M E N U  P A R C O U R I R */
+
+p.rooms {
+  margin-top: 3%;
+  font-size: 50px;
+  line-height: 60px;
+  color: black;
+}
+
 
 /* F E U I L L E  D E  S A L L E */
 
 .feuille {
   z-index:1000;
-  width: 350px;
-  height: 450px;
+  width: 30%;
+  height: 70%;
   background-color: white;
   top: 50%;
-  left:22.5%;
+  left:20%;
   transform: translate(0, -50%);
   -webkit-transform: translate(0, -50%);
   position: fixed;
@@ -98,18 +126,19 @@ body {
   display:none;
 }
 
+#titre-feuille {
+  font-size: 20px;
+}
+
 .feuille p {
-  font-family: 'Heebo', sans-serif;
-  color:black;
-  font-size: 14px; 
+  font-family: '../font/bespoke43np9uelc8';
+  font-size: 12px;
   padding-left: 4%;
   padding-right: 4%;
 }
 
-.feuille a {
-  font-family: 'Heebo', sans-serif;
+.feuille a, a:link, a:visited {
   text-decoration: none;
-  font-size: 14px;
   color:black;
 }
 

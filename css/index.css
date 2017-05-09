@@ -3,6 +3,8 @@ body {
   height:100%;
   margin:0px;
   background-color: black;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @font-face {
@@ -51,6 +53,8 @@ body {
 #t4 {
   margin-left: 450px;
 }
+
+
 
 
 

@@ -2,13 +2,15 @@
 <html lang="fr">
 <head>
 	<meta charset="utf-8">
-	<title>Faire le tour</title>
-	<link rel="stylesheet" href="../css/faireletour.css">
+	<title>?</title>
+	<link rel="stylesheet" href="../css/alteration.css">
 	<link rel="stylesheet" href="../css/menu.css">
-	<link href="https://fonts.googleapis.com/css?family=Heebo:400,500" rel="stylesheet">
 	<script type="text/javascript" src="../js/jquery-2.1.1.min.js"></script>
-	<script type="text/javascript" src="../js/room1.js"></script>
+	<script type="text/javascript" src="../js/jquery-ui-min.js"></script>
+	<script type="text/javascript" src="../js/interact.min.js"></script>
+	<script type="text/javascript" src="../js/room2.js"></script>
 	<script type="text/javascript" src="../js/menu.js"></script>
+	<link href='https://fonts.googleapis.com/css?family=Karla:400,400italic,700italic,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
@@ -19,16 +21,20 @@
 	<div class="dropdown-content">
 		<a id="menulink" href="#">Parcourir</a>
 		<a id="feuillelink" href="#">Feuille de salle</a>
+		<a class="print" href="#">Éditer</a>
 	</div>
 </div>
 
 <!-- C O N T E N U -->
 
-	<div id='set-height'></div>
-	<video id="v0" tabindex="0" autobuffer preload muted>
-		<source type="video/mp4;" src="../media/video/cache-oeuvre_test2.mov">
-		<p>Sorry, your browser does not support the &lt;video&gt; element.</p>
-	</video>
+	<ul class="images">
+		
+			<img src="../media/image/room_alteration/oeuvre1.png"/>
+			<img src="../media/image/room_alteration/oeuvre2.png"/>
+			<img src="../media/image/room_alteration/oeuvre3.png"/>
+			<img src="../media/image/room_alteration/oeuvre4.png"/>  
+		
+	</ul>
 
 <!-- M E N U - S A L L E S -->
 
@@ -43,14 +49,19 @@
 				<a href="editerlespace.html">Éditer l'espace</a>
 			</p>
 		</div>
-	</div>
+	</div>	
 
 <!-- F E U I L L E  D E  S A L L E  -->
 
 	<div class="feuille">
-		<p id="titre-feuille">Faire le tour</p>
-			<p>Se déplacer, s'avancer, marcher, s'avancer, reculer, inlassablement.</br>
-			Que retenez-vous de votre visite ?</br>
+		<p id="titre-feuille">Altération</p>
+		<p>L'œuvre d'art à l'époque de sa reproductibilité numérique</br></br>
+			texte
+			<i>ital</i>
+			<a>ceci est un lien</a></br>
+			texte «&#8239;ceci est une citation&#8239;» texte
+
+
 		</p>
 	</div>
 
