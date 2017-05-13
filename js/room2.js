@@ -40,8 +40,10 @@ $(document).ready(function() {
 	var lastImage;
 	$(document).keydown(function() {
 	   	if(event.keyCode == 37) {  //prev key
+	   		event.preventDefault();
 			lastImage.rotate(-90);
 	    } else if(event.keyCode == 39) {  //next key
+	   		event.preventDefault();
 	    	lastImage.rotate(90);
 		}
 	});
