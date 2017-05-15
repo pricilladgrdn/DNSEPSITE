@@ -18,14 +18,16 @@ body {
 /* M E N U  D É R O U L A N T */
 
 .dropdown {
+  padding-top: 10px;
+  padding-bottom: 1%;
   z-index: 100;
-  top: 2%;
+  top: 1%;
   left:1%;
   height: 30px;
   position: fixed;
   display: inline;
   font-family: '../font/bespoke43np9uelc8';
-  font-size: 11px;
+  font-size: 12px;
   text-decoration: none;
   list-style: none;
 }
@@ -33,6 +35,7 @@ body {
 .dropdown-content {
     display: none;
     min-width: 160px;
+    margin-top: -10px;
 }
 
 .dropdown:hover .dropdown-content {
@@ -47,18 +50,19 @@ body {
 }
 
 .dropdown a:hover {
-  text-decoration: underline;
+  font-style: italic;
 }
 
 #white a{
     color:white;
 }
 
+
 /* C A D R E  M E N U  P A R C O U R I R */
 
 .menu {
   z-index:101;
-  width: 60%;
+  width: 50%;
   height: 70%;
   background-color: white;
   top: 50%;
@@ -70,14 +74,42 @@ body {
   display:none;
 }
 
+/* P L A C E M E N T  L I E N S  M E N U */
+
+
+#r1 {
+  margin-left: 45%;
+}
+
+#r2 {
+  margin-left: 35%;
+}
+
+#r3 {
+  margin-left: 15%;
+}
+
+#r4 {
+  margin-left: 40%;
+}
+
+#r5 {
+  margin-left: 35%;
+}
+#r6 {
+  margin-left: 25%;
+}
+
 /* C O N T E N U  M E N U  P A R C O U R I R */
 
 .contenu-menu {
   width: 94%;
   height: auto;
+  margin-top: 3%;
   margin-left: 3%;
   margin-bottom: 3%;
   font-family: '../font/bespoke43np9uelc8';
+  line-height: auto;
   font-size: 20px;
 }
 
@@ -145,6 +177,13 @@ p.rooms {
 .feuille a:hover {
   font-style: italic;
 }
+
+
+
+
+
+
+
 
 
 /* ancien code */
