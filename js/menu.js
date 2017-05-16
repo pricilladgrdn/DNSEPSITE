@@ -1,7 +1,6 @@
 $(document).ready(function() {
     $('#menulink').click(function(event) {
     	event.preventDefault();
-        console.log("LA");
     	var menu = $('.menu');
         var feuille = $('.feuille');
         if (menu.css('display') === 'none')

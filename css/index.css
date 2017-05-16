@@ -28,6 +28,9 @@ body {
 
   transform: rotate(-8deg) skew(-8deg, 0);
   -webkit-transform: rotate(-8deg) skew(-8deg, 0);
+
+    position: absolute;
+  display: block;
 }
 
 #titre a, a:link {
