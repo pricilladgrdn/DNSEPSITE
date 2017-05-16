@@ -1,44 +1,66 @@
-/*global glitch, devicePixelRatio*/
-var imagePath = 'oeuvre1.png';
-var imgContainerEl = $(".images");
+$(document).ready(function() {
+	//localStorage.clear();
+	var waitForRefresh = false;
+	var maxImage = 30;
+	var lastStep = localStorage.getItem("step");
 
-var params = {
-	amount:     13,
-	iterations: 7,
-	quality:    99,
-	seed:       4
-};
+	if(lastStep == null)
+	{
+		lastStep = "1-1";
+		localStorage.setItem("step", lastStep);
+	}
 
-loadImage( imagePath, function ( img ) {
-	glitch( params )
-		.fromImage( img )
-		.toImage()
-		.then( function( glitchedImage ) {
-			console.log("SUCCESS");
-			console.log(glitchedImage);
-			document.body.appendChild( glitchedImage );
-		});
+	var image = parseInt(lastStep.split("-")[0]);
+	var glitch = parseInt(lastStep.split("-")[1]);
+
+	if(glitch >= $("#image" +  image + " img").length)
+	{
+		localStorage.setItem("step", image+1 + "-" + 1)
+		waitForRefresh = true;
+	}
+
+	for(i = 1 ; i < image ; i++)
+	{
+		$("#image" +  i + " img:last-child").show();
+		console.log("show last child of image" + i)
+	}
+
+	$("#image" + image + " img:nth-child(" + glitch + ")").show();
+	console.log("show glitch " + glitch + " of image" + image);
+
+	for(i = image + 1 ; i <= maxImage ; i++)
+	{
+		$("#image" +  i + " img:first-child").show().css("visibility", "hidden");
+		console.log("visibility hidden for first child of image" + i);
+	}
+
+	$(window).keypress(function (e) {
+		e.preventDefault();
+		incrementGlitch();
+	});
+
+	$(window).click(function (e) {
+		e.preventDefault();
+		incrementGlitch();
+	});
+
+	function incrementGlitch()
+	{
+		if(glitch < $("#image" +  image + " img").length && !waitForRefresh)
+		{
+			glitch++;
+			localStorage.setItem("step", image + "-" + glitch)
+			$("#image" + image + " img:nth-child(" + (glitch-1) + ")").hide();
+			$("#image" + image + " img:nth-child(" + glitch + ")").show();
+		}
+		else 
+		{
+			localStorage.setItem("step", image+1 + "-" + 1)
+			waitForRefresh = true;
+		}
+	}
 });
 
-function loadImage ( src, callback ) {
-	var imageEl = new Image();
-	imageEl.onload = function () {
-		callback( imageEl );
-	};
-	imageEl.src = src;
-}
 
-/* grille images responsive */
 
-function getRandomSize(min, max) {
-  return Math.round(Math.random() * (max - min) + min);
-}
 
-var allImages = "";
-
-for (var i = 0; i < 25; i++) {
-  var width = getRandomSize(200, 400);
-  var height =  getRandomSize(200, 400);
-}
-
-$('#photos').append(allImages);
