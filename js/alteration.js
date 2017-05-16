@@ -1,5 +1,4 @@
 $(document).ready(function() {
-	//localStorage.clear();
 	var waitForRefresh = false;
 	var maxImage = 30;
 	var lastStep = localStorage.getItem("step");
@@ -15,7 +14,11 @@ $(document).ready(function() {
 
 	if(glitch >= $("#image" +  image + " img").length)
 	{
-		localStorage.setItem("step", image+1 + "-" + 1)
+		if(image < maxImage)
+		{
+			localStorage.setItem("step", image+1 + "-" + 1)
+		}
+
 		waitForRefresh = true;
 	}
 
@@ -34,29 +37,49 @@ $(document).ready(function() {
 		console.log("visibility hidden for first child of image" + i);
 	}
 
-	$(window).keypress(function (e) {
-		e.preventDefault();
+	$(window).keydown(function (e) {
+		if (e.keyCode === 27)
+		{
+			waitForRefresh = true;
+			localStorage.clear();
+			location.reload();	
+		}
+
+		if (e.keyCode === 32 ||
+			e.keyCode === 37 ||
+			e.keyCode === 38 ||
+			e.keyCode === 39 ||
+			e.keyCode === 40)
+		{
+			e.preventDefault();
+		}
+
 		incrementGlitch();
 	});
 
 	$(window).click(function (e) {
-		e.preventDefault();
 		incrementGlitch();
 	});
 
 	function incrementGlitch()
 	{
-		if(glitch < $("#image" +  image + " img").length && !waitForRefresh)
+		if(!waitForRefresh)
 		{
-			glitch++;
-			localStorage.setItem("step", image + "-" + glitch)
-			$("#image" + image + " img:nth-child(" + (glitch-1) + ")").hide();
-			$("#image" + image + " img:nth-child(" + glitch + ")").show();
-		}
-		else 
-		{
-			localStorage.setItem("step", image+1 + "-" + 1)
-			waitForRefresh = true;
+			if(glitch < $("#image" +  image + " img").length)
+			{
+				glitch++;
+				localStorage.setItem("step", image + "-" + glitch)
+				$("#image" + image + " img:nth-child(" + (glitch-1) + ")").hide();
+				$("#image" + image + " img:nth-child(" + glitch + ")").show();
+			}
+			else 
+			{
+				if(image < maxImage)
+				{
+					localStorage.setItem("step", image+1 + "-" + 1)
+				}
+				waitForRefresh = true;
+			}
 		}
 	}
 });
