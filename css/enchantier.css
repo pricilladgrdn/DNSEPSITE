@@ -46,3 +46,10 @@ li {
 		display:none !important;
 	}
 }
+
+@media (max-width: 1280px) {
+.images img {
+	max-width: 300px;
+}
+
+}
