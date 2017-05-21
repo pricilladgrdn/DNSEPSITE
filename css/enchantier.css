@@ -49,7 +49,10 @@ li {
 
 @media (max-width: 1280px) {
 .images img {
-	max-width: 300px;
+	width: 300px;
+}
+#img332x500{
+	width: 200px;
 }
 
 }
