@@ -3,7 +3,8 @@ body {
 
 }
 
-li a, li a:link, li a:visited {
+li span, li span:link, li span:visited {
+	cursor: pointer;
 	position:absolute;
 	top:0;
 	right:0;
@@ -18,13 +19,13 @@ li a, li a:link, li a:visited {
 	display: none;
 }
 
-li:hover a {
+li:hover span {
 	display: block;
 }
 
-li a:hover {
-	color:white;
-	background-color: #1AFBB8;
+li span:hover {
+	color:black;
+	background-color:white;
 }
 
 li {
@@ -35,6 +36,14 @@ li {
 	cursor:move;
 	visibility:hidden;
 }
+
+/*li a {
+	position:absolute;
+    bottom:5px;
+    right:5px;
+    background:black;
+    color:#FFF;
+}*/
 
 @media print{
 	@page {

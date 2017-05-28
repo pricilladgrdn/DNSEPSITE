@@ -1,4 +1,9 @@
 $(document).ready(function() {
+
+	function randomize(min, max) {
+		return Math.floor((Math.random() * (max - min + 1)) + min);
+	}
+
 	$(".images li").each(function() {
 		$(this).mouseenter(function() {
 			$(this).children("audio").get(0).play();
@@ -9,11 +14,8 @@ $(document).ready(function() {
 			$(this).children("audio").get(0).currentTime = 0;
 		});
 	});
-});
 
-$(document).ready(function() {
-
-	var px2mm = function(px){   
+	/*var px2mm = function(px){   
     	return Math.floor(px/$('#my_mm').height()); //JQuery returns sizes in PX
  	};
 
@@ -31,21 +33,19 @@ $(document).ready(function() {
         })
 
         callback();
-    };
+    };*/
 
 	$(".print").click(function(){
-		beforePrint(window.print);
+		window.print();
 	});
-});
 
-$(document).ready(function() {
-	function randomize(min, max) {
-		return Math.floor((Math.random() * (max - min + 1)) + min);
-	}
+	$("ul.images li span").click(function(e){
+		$(e.target).parent().hide();
+	});
 
 	$('ul.images li').each(function() {
 		$(this).css('bottom', '0%')
-			.css('left', randomize(0, 297*5) + 'mm') // CHANGE SECOND NUMBER FOR SCREEN SIZE
+			.css('left', randomize(0, 297) + 'mm') // CHANGE SECOND NUMBER FOR SCREEN SIZE
 			.css('z-index', randomize(50, 99))
 			.css('visibility', 'visible')
 			.mouseup(function() {
@@ -58,7 +58,6 @@ $(document).ready(function() {
 		interact('.draggable')
 		.draggable();
 	} else {
-
 		$('ul.images li').mousedown(function() {
 			$(this).css('z-index', 99).siblings().each(function() {
 				style = window.getComputedStyle($(this)[0]);
