@@ -54,14 +54,17 @@ li {
 	.dropdown, .menu, .feuille {
 		display:none !important;
 	}
+
+	.images li span{
+		display:none;
+	}
 }
 
 @media (max-width: 1280px) {
-.images img {
-	width: 300px;
-}
-#img332x500{
-	width: 200px;
-}
-
+	.images img {
+		width: 300px;
+	}
+	#img332x500{
+		width: 200px;
+	}
 }
