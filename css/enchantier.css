@@ -1,6 +1,15 @@
 body {
 	background-color: white;
+}
 
+body *::selection {
+  background-color:rgba(0, 0, 0, 0.99);
+  color:#FFF;
+}
+
+body *::-moz-selection {
+  background-color:rgba(0, 0, 0, 0.99);
+  color:#FFF;
 }
 
 li span, li span:link, li span:visited {

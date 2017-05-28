@@ -4,6 +4,15 @@ body {
 	height:100%;
 }
 
+body *::selection {
+  background-color:rgba(0, 0, 0, 0.99);
+  color:#FFF;
+}
+
+body *::-moz-selection {
+  background-color:rgba(0, 0, 0, 0.99);
+  color:#FFF;
+}
 
 #photos {
   /* Prevent vertical gaps */

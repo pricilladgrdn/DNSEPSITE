@@ -5,6 +5,15 @@ body {
   list-style-type: none;
 }
 
+body *::selection {
+  background-color:rgba(0, 0, 0, 0.99);
+  color:#FFF;
+}
+body *::-moz-selection {
+  background-color:rgba(0, 0, 0, 0.99);
+  color:#FFF;
+}
+
 @font-face {
   font-family: '../font/bespoke43np9uelc8';
   src: url('../font/bespoke-2-webfont.woff2') format('woff2'),
