@@ -1,4 +1,4 @@
-window.onload = function () {
+/*window.onload = function () {
 	var parallaxBox = document.getElementsByTagName( 'body' )[0];
 	var left = document.getElementById ( 'titre' ).offsetLeft,
 		top = document.getElementById ( 'titre' ).offsetTop;
@@ -20,4 +20,4 @@ window.onload = function () {
 		obj.style.left = left - ( ( ( mouseX - ( parseInt( obj.offsetWidth ) / 2 + left ) ) / containerWidth ) * speed ) + 'px';
 		obj.style.top = top - ( ( ( mouseY - ( parseInt( obj.offsetHeight ) / 2 + top ) ) / containerHeight ) * speed ) + 'px';
 	}
-}
+}*/

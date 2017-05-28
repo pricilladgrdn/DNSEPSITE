@@ -44,29 +44,44 @@ body {
 
 #t1 {
   margin-left: 25%;
+  animation: rot 1s infinite linear;
 }
 
 #t2 {
   margin-left: 40%;
+  animation: rot 2s infinite linear;
 }
 
 #t3 {
   margin-left: 15%;
+  animation: rot 3s infinite linear;
 }
 
 #t4 {
   margin-left: 35%;
+  animation: rot 4s infinite linear;
 }
 
-
+@keyframes rot {
+  from {
+    transform: rotate(0deg)
+               translate(-150px)
+               rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg)
+               translate(-150px) 
+               rotate(-360deg);
+  }
+}
 
 @media (max-width: 1280px) {
 
-#titre {
-  margin-top: 6%;
-  font-size: 5em;
-  line-height: 130px;
-}
+  #titre {
+    margin-top: 6%;
+    font-size: 5em;
+    line-height: 130px;
+  }
 }
 
 
