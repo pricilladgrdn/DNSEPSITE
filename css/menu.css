@@ -27,6 +27,7 @@ body *::-moz-selection {
 /* M E N U  D É R O U L A N T */
 
 .dropdown {
+  cursor: pointer;
   padding-top: 10px;
   padding-bottom: 1%;
   z-index: 100;
@@ -107,6 +108,9 @@ body *::-moz-selection {
 }
 #r6 {
   margin-left: 25%;
+}
+#r7 {
+  margin-left: 15%;
 }
 
 /* C O N T E N U  M E N U  P A R C O U R I R */
