@@ -2,13 +2,14 @@
 <html lang="fr">
 <head>
 	<meta charset="utf-8">
-	<title>Faire le tour</title>
-	<link rel="stylesheet" href="../css/faireletour.css">
+	<title>?</title>
+	<link rel="stylesheet" href="../css/daled.css">
 	<link rel="stylesheet" href="../css/menu.css">
-	<link href="https://fonts.googleapis.com/css?family=Heebo:400,500" rel="stylesheet">
 	<script type="text/javascript" src="../js/jquery-2.1.1.min.js"></script>
-	<script type="text/javascript" src="../js/room1.js"></script>
+	<script type="text/javascript" src="../js/jquery-ui-min.js"></script>
+	<script type="text/javascript" src="../js/interact.min.js"></script>
 	<script type="text/javascript" src="../js/menu.js"></script>
+	<link href='https://fonts.googleapis.com/css?family=Karla:400,400italic,700italic,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
@@ -16,19 +17,20 @@
 
 <div class="dropdown">
 	<img src="../media/image/bouton/bouton-menu-black.png">
-	<div class="dropdown-content">
+	<div class="dropdown-content" id="black">
 		<a id="menulink" href="#">Parcourir</a>
 		<a id="feuillelink" href="#">Feuille de salle</a>
+		<a class="#" href="#">Participer</a>
 	</div>
 </div>
 
 <!-- C O N T E N U -->
 
-	<div id='set-height'></div>
-	<video id="v0" tabindex="0" autobuffer preload muted>
-		<source type="video/mp4;" src="../media/video/cache-oeuvre_test2.mov">
-		<p>Sorry, your browser does not support the &lt;video&gt; element.</p>
-	</video>
+<div id="cadre"></div>
+	<ul class="images">
+			<img src="../media/image/room_nepastoucher/01.jpg"/>
+
+	</ul>
 
 <!-- M E N U - S A L L E S -->
 
@@ -44,26 +46,19 @@
 				<a id="r7" href="nepastoucher.html">Ne pas toucher</a>
 			</p>
 		</div>
-	</div>
+	</div>	
 
 <!-- F E U I L L E  D E  S A L L E  -->
 
 	<div class="feuille">
-		<p id="titre-feuille">Faire le tour</p>
-			<p>Se déplacer, s'avancer, marcher, s'avancer, reculer, inlassablement.</br>
-			Que retenez-vous de votre visite ?</br>
+		<p id="titre-feuille">Ne pas toucher</p>
+		<p>
+			<i>Typologies de l'exposition</i>
+			
+			<a>ceci est un lien</a></br>
+			texte «&#8239;ceci est une citation&#8239;» texte
 		</p>
 	</div>
-	
-	<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-	  ga('create', 'UA-100453981-1', 'auto');
-	  ga('send', 'pageview');
-
-	</script>
 </body>
 </html>
