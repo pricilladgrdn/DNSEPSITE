@@ -4,30 +4,31 @@ body {
 	height:100%;
 }
 
-.images{
+.images {
 	margin-top: 55px;
-	margin-right: 3%;
+	margin-left: 3%;
 }
 
-ul img{
+.images img {
 	margin-right: 10px;
 	margin-bottom: 10px;
 }
 
-a{
+.header {
+	top:0%;
+	left:0%;
+	position:fixed;
+	height:8%;
+	width:100%;
+	background-color: white;
+	z-index:2;
+}
+
+.header span{
+	position:absolute;
+	display:none;
+	top:40%;
+  	left:50%;
 	font-family: '../font/bespoke43np9uelc8';
 	font-size: 12px;
-	width: 100%;
-}
-
-a span{
-	position:absolute;
-	margin:0px;
-	color:black;
-	padding: 5px;
-	transform:scale(0);	       
-}
-
-a:hover span, a:focus span{ 
-	transform:scale(1);
 }
