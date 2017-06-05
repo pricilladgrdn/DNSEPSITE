@@ -35,10 +35,6 @@ $(document).ready(function() {
         callback();
     };*/
 
-	$(".print").click(function(){
-		window.print();
-	});
-
 	$("ul.images li span").click(function(e){
 		$(e.target).parent().hide();
 	});
