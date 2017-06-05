@@ -14,3 +14,20 @@ ul img{
 	margin-bottom: 10px;
 }
 
+a{
+	font-family: '../font/bespoke43np9uelc8';
+	font-size: 12px;
+	width: 100%;
+}
+
+a span{
+	position:absolute;
+	margin:0px;
+	color:black;
+	padding: 5px;
+	transform:scale(0);	       
+}
+
+a:hover span, a:focus span{ 
+	transform:scale(1);
+}
