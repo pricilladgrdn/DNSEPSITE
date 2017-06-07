@@ -1,31 +1,39 @@
+currentLine = 0;
+
 $(document).ready(function() {
 	img = $('.images img').first();
 	img.css({ visibility: 'hidden', display: 'block' });
 	setRandomCoord(img);
 	img.css('visibility', 'visible');
 
-	console.log("La");
-
-	$('images img').slice(1, 5).each(function() {
+	$('.images img').slice(1, 5).each(function() {
 		$(this).css({ visibility: 'hidden', display: 'block' });
+		setRandomCoord($(this));
 		while(imgIsOverlapping($(this)))
 			setRandomCoord($(this));
 		$(this).css('visibility', 'visible');
 	});
 
-	//toutes les images en display none
-	//prendre 5 premières images
-	//placer aleatoirement sans chevauchage
-	//display block opacity 0
-	//lorsque souris quitte hover image display none
-	//prochaine image random display block
-
-
-	//lorsque opacity = 1 ==> afficher text avec timer 10s
-	//lorsque dernier texte --> attendre opacity 0 avant d'accepter nouveau texte
-    
-
+	$('.images img').each(function() {
+		$(this).mouseout(function() {
+			//if($(this).css('opacity') >= 0)
+  				nextLine();
+		});
+	});
 });
+
+function nextLine() {
+	currentLine++;
+	max = $(".texte div").length;
+	if(currentLine >= max)
+		currentLine = 0;
+	$(".texte div").eq(currentLine).css("opacity", "1");
+	doSetTimeOut(currentLine);
+}
+
+function doSetTimeOut(i) {
+	setTimeout(function() { $(".texte div").eq(i).css("opacity", "0"); }, 5000);
+}
 
 function setRandomCoord(img) {
 	img.css('left', getRandomLeft(img));
@@ -33,18 +41,22 @@ function setRandomCoord(img) {
 }
 
 function imgIsOverlapping(img) {
-	result = false;
+	cnt = 0;
 	$('.images img:visible').each(function() {
-		result = checkOverlap(img, $(this))
-		if(result)
+		if(checkOverlap(img, $(this)))
+			cnt++;
+
+		if(cnt > 1)
 			return false;
 	});
-	return result;
+
+	return (cnt > 1);
 }
 
 function checkOverlap(elem, elem2) {
-	return Math.abs(elem.position().left - elem2.position().left) < elem.width() &&
+	result = Math.abs(elem.position().left - elem2.position().left) < elem.width() &&
 			Math.abs(elem.position().top - elem2.position().top) < elem.height();
+	return result;
 }
 
 function randomize(min, max) {
@@ -52,11 +64,11 @@ function randomize(min, max) {
 }
 
 function getRandomTop(elem) {
-	wh = $(window).height();
-	return randomize(0, wh - elem.height());
+	dh = $(document).height();
+	return randomize(0, dh - elem.height());
 }
 
 function getRandomLeft(elem) {
-	ww = $(window).width();
-	return randomize(0, ww - elem.width());
+	dw = $(document).width();
+	return randomize(0, dw - elem.width());
 }
