@@ -162,11 +162,11 @@ p.rooms {
 
 .feuille {
   z-index:1000;
-  width: 30%;
+  width: 25%;
   height: 70%;
   background-color: white;
   top: 50%;
-  left:20%;
+  left:25%;
   transform: translate(0, -50%);
   -webkit-transform: translate(0, -50%);
   position: fixed;
