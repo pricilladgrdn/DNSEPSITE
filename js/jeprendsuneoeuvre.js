@@ -95,6 +95,8 @@ function nextText() {
 			$(this).css("opacity", "1");
 			doSetTimeOut(".texte .txt-" + currentLine, "opacity", "0", textTransitionDuration + fullVisibleDuration);
 		});
+	} else {
+		$('.player_audio').get(0).play();
 	}
 }
 
