@@ -8,32 +8,45 @@ $(document).ready(function() {
 	textTransitionDuration = parseFloat($(".texte div").css("transition-duration").replace(/[^-\d\.]/g, '')) * 1000;
 	imgTransitionDuration = parseFloat($(".images img").css("transition-duration").replace(/[^-\d\.]/g, '')) * 1000;
 	maxLine = $(".images img").length;
-
+	maxLoop = 200;
 	images = [];
-	$('.images img').each(function(){ images.push(this.id); });
 
-	placeOnPage(images.shift());
+	$('.images img').each(function(){ 
+		images.push(this.id); 
 
-	for(var i = 1; i < simultaneousImg; i++) {
-		placeOnPage(images.shift());
-	}
+		$(this).mouseenter(function() {
+			if(images.indexOf($(this).attr('id')) < 0)
+				$(this).css('opacity', '1');
+		});
 
-	$('.images img').each(function() {
 		$(this).mouseout(function() {
+			$(this).css('opacity', '0');
 			if($(this).css('opacity') == 1) {
-  				nextText();
-  				nextImg($(this));
-  			}
+				nextText();
+				nextImg($(this));
+			}
+
 		});
 	});
+
+	for(var i = 0; i < simultaneousImg; i++) {
+		placeOnPage(images.shift());
+	}
 });
 
 function placeOnPage(id) {
 	elem = $(".images #" + id);
 	elem.css({ visibility: 'hidden', display: 'block' });
 	setRandomCoord(elem);
-	while(imgIsOverlapping(elem))
+	loop = 0;
+	while(imgIsOverlapping(elem)) {
 		setRandomCoord(elem);
+		loop++;
+		if(loop > maxLoop) {
+			console.log("Not enough place in screen ==> overlap allowed")
+			break;	
+		}
+	}
 	elem.css('visibility', 'visible');
 }
 
@@ -43,13 +56,11 @@ function setRandomCoord(img) {
 }
 
 function getRandomTop(elem) {
-	dh = $(document).height();
-	return randomize(0, dh - elem.height());
+	return randomize(0, $(document).height() - elem.height());
 }
 
 function getRandomLeft(elem) {
-	dw = $(document).width();
-	return randomize(0, dw - elem.width());
+	return randomize(0, $(document).width() - elem.width());
 }
 
 function randomize(min, max) {
@@ -65,7 +76,6 @@ function imgIsOverlapping(img) {
 		if(cnt > 1)
 			return false;
 	});
-
 	return (cnt > 1);
 }
 
@@ -76,8 +86,7 @@ function checkOverlap(elem, elem2) {
 }
 
 function nextText() {
-	if($(".texte div:last").css('opacity') == 0)
-	{
+	if($(".texte div:last").css('opacity') == 0) {
 		currentLine++;
 		if(currentLine > maxLine) {
 			currentLine = 1;
@@ -94,7 +103,6 @@ function doSetTimeOut(selector, property, value, duration) {
 }
 
 function nextImg(elem) {
-	elem.css('opacity', '0');
 	doSetTimeOut("#" + elem.attr('id'), "display", "none", imgTransitionDuration);
 	images.push(elem.attr('id'));
 	placeOnPage(images.shift());

@@ -21,12 +21,9 @@ body {
     -o-transition: opacity 0.7s ease-out;
 }
 
-.images img:hover{
-	opacity: 1;
-}
-
 .texte {
 	position: absolute;
+	margin-bottom:5%;
 }
 
 .texte div {
