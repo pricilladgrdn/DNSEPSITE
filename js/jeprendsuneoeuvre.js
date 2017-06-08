@@ -1,43 +1,59 @@
-currentLine = 0;
-
 $(document).ready(function() {
-	img = $('.images img').first();
-	img.css({ visibility: 'hidden', display: 'block' });
-	setRandomCoord(img);
-	img.css('visibility', 'visible');
+	//YOU CAN TOUCH THAT ≚ㅅ≚
+	simultaneousImg = 4; // <-- number max of simultaneous hidden images at screen
+	fullVisibleDuration = 2000; // <-- duration during which text has max opacity
 
-	$('.images img').slice(1, 5).each(function() {
-		$(this).css({ visibility: 'hidden', display: 'block' });
-		setRandomCoord($(this));
-		while(imgIsOverlapping($(this)))
-			setRandomCoord($(this));
-		$(this).css('visibility', 'visible');
-	});
+	//AAAAAND DON'T EVEN TRY TO LOOK UNDER
+	currentLine = 0;
+	textTransitionDuration = parseFloat($(".texte div").css("transition-duration").replace(/[^-\d\.]/g, '')) * 1000;
+	imgTransitionDuration = parseFloat($(".images img").css("transition-duration").replace(/[^-\d\.]/g, '')) * 1000;
+	maxLine = $(".images img").length;
+
+	images = [];
+	$('.images img').each(function(){ images.push(this.id); });
+
+	placeOnPage(images.shift());
+
+	for(var i = 1; i < simultaneousImg; i++) {
+		placeOnPage(images.shift());
+	}
 
 	$('.images img').each(function() {
 		$(this).mouseout(function() {
-			//if($(this).css('opacity') >= 0)
-  				nextLine();
+			if($(this).css('opacity') == 1) {
+  				nextText();
+  				nextImg($(this));
+  			}
 		});
 	});
 });
 
-function nextLine() {
-	currentLine++;
-	max = $(".texte div").length;
-	if(currentLine >= max)
-		currentLine = 0;
-	$(".texte div").eq(currentLine).css("opacity", "1");
-	doSetTimeOut(currentLine);
-}
-
-function doSetTimeOut(i) {
-	setTimeout(function() { $(".texte div").eq(i).css("opacity", "0"); }, 5000);
+function placeOnPage(id) {
+	elem = $(".images #" + id);
+	elem.css({ visibility: 'hidden', display: 'block' });
+	setRandomCoord(elem);
+	while(imgIsOverlapping(elem))
+		setRandomCoord(elem);
+	elem.css('visibility', 'visible');
 }
 
 function setRandomCoord(img) {
 	img.css('left', getRandomLeft(img));
 	img.css('top', getRandomTop(img));
+}
+
+function getRandomTop(elem) {
+	dh = $(document).height();
+	return randomize(0, dh - elem.height());
+}
+
+function getRandomLeft(elem) {
+	dw = $(document).width();
+	return randomize(0, dw - elem.width());
+}
+
+function randomize(min, max) {
+	return Math.floor((Math.random() * (max - min + 1)) + min);
 }
 
 function imgIsOverlapping(img) {
@@ -59,16 +75,28 @@ function checkOverlap(elem, elem2) {
 	return result;
 }
 
-function randomize(min, max) {
-	return Math.floor((Math.random() * (max - min + 1)) + min);
+function nextText() {
+	if($(".texte div:last").css('opacity') == 0)
+	{
+		currentLine++;
+		if(currentLine > maxLine) {
+			currentLine = 1;
+		}
+		$(".texte .txt-" + currentLine).each(function() {
+			$(this).css("opacity", "1");
+			doSetTimeOut(".texte .txt-" + currentLine, "opacity", "0", textTransitionDuration + fullVisibleDuration);
+		});
+	}
 }
 
-function getRandomTop(elem) {
-	dh = $(document).height();
-	return randomize(0, dh - elem.height());
+function doSetTimeOut(selector, property, value, duration) {
+	setTimeout(function() { $(selector).css(property, value); }, duration);
 }
 
-function getRandomLeft(elem) {
-	dw = $(document).width();
-	return randomize(0, dw - elem.width());
+function nextImg(elem) {
+	elem.css('opacity', '0');
+	doSetTimeOut("#" + elem.attr('id'), "display", "none", imgTransitionDuration);
+	images.push(elem.attr('id'));
+	placeOnPage(images.shift());
 }
+
