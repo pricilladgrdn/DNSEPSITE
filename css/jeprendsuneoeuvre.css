@@ -15,23 +15,20 @@ body {
 	display:none;
 	position:absolute;
 	opacity: 0;
-    transition: opacity 0.7s ease-out;
-    -moz-transition: opacity 0.7s ease-out;
-    -webkit-transition: opacity 0.7s ease-out;
-    -o-transition: opacity 0.7s ease-out;
+    transition: opacity 0.6s ease-out;
+    -moz-transition: opacity 0.6s ease-out;
+    -webkit-transition: opacity 0.6s ease-out;
+    -o-transition: opacity 0.6s ease-out;
 }
 
 .texte {
 	position: absolute;
-	margin-bottom:5%;
+	margin:4%;
+	font-family: '../font/bespoke43np9uelc8';
+	font-size: 20px;
 }
 
 .texte div {
-
-	font-family: '../font/bespoke43np9uelc8';
-	font-size: 20px;
-	margin-top: 5%;
-	margin-left:5%;
 	opacity: 0;
 	transition: 5s ease-out;
     -moz-transition: 5s ease-out;
