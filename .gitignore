@@ -2,3 +2,6 @@
 *.mp4
 *.webm
 .DS_Store
+media/image/room_nepastoucher/*
+rooms/img-list.html
+rooms/museum-list.html
