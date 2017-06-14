@@ -16,13 +16,15 @@ $(document).ready(function() {
 
 		$(this).mouseenter(function() {
 			if(images.indexOf($(this).attr('id')) < 0)
+			{
 				$(this).css('opacity', '1');
+				nextText();
+			}
 		});
 
 		$(this).mouseout(function() {
 			$(this).css('opacity', '0');
 			if($(this).css('opacity') == 1) {
-				nextText();
 				nextImg($(this));
 			}
 
@@ -95,8 +97,6 @@ function nextText() {
 			$(this).css("opacity", "1");
 			doSetTimeOut(".texte .txt-" + currentLine, "opacity", "0", textTransitionDuration + fullVisibleDuration);
 		});
-	} else {
-		$('.player_audio').get(0).play();
 	}
 }
 
