@@ -3,12 +3,10 @@ $(document).ready(function() {
 
 	$(document).on('mouseover mouseout', '.image', function(){
     	if (event.type == 'mouseover') {
-			console.log("test");
 	    	museums = $('.header span');
 	        if(museums.length >= $(this).index() && !hided)
 				museums.eq($(this).index()).show();
 		} else {
-			console.log("test");
 	    	museums = $('.header span');
 	       	if(museums.length >= $(this).index())
 				museums.eq($(this).index()).hide();
@@ -51,8 +49,6 @@ $(document).ready(function() {
 	             url: $form.attr("action"),
 	             success: function(data){
 	        		$("#output").text(data);
-	                console.log("success");
-	                console.log(data);
 	                $(".header").load(location.href + " .header > *");
 	                $(".images").load(location.href + " .images > *");
 	             }
