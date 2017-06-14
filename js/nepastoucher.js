@@ -1,15 +1,18 @@
 $(document).ready(function() {
 	hided = false;
 
-	$('.images img').each(function(index) {
-		museums = $('.header span')
-		$(this).hover(function() {
-			if(museums.length >= index && !hided)
-				museums.eq(index).show();
-		}, function() {
-			if(museums.length >= index && !hided)
-				museums.eq(index).hide();
-		});
+	$(document).on('mouseover mouseout', '.image', function(){
+    	if (event.type == 'mouseover') {
+			console.log("test");
+	    	museums = $('.header span');
+	        if(museums.length >= $(this).index() && !hided)
+				museums.eq($(this).index()).show();
+		} else {
+			console.log("test");
+	    	museums = $('.header span');
+	       	if(museums.length >= $(this).index())
+				museums.eq($(this).index()).hide();
+		}
 	});
 
 	$(".upload").click(function(){
@@ -50,6 +53,8 @@ $(document).ready(function() {
 	        		$("#output").text(data);
 	                console.log("success");
 	                console.log(data);
+	                $(".header").load(location.href + " .header > *");
+	                $(".images").load(location.href + " .images > *");
 	             }
 	        });
 	    } else {

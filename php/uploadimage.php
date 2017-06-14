@@ -9,7 +9,7 @@
 	$tmpfilename =  $_FILES['file']['tmp_name'];
 	$filename = $_FILES['file']['name'];
 	$ext = pathinfo($filename, PATHINFO_EXTENSION);
-	$outputdir = '../media/image/room_nepastoucher/';
+	$outputdir = '../media/image/room_nepastoucher/visitors/';
 
 	switch($ext)
 	{
@@ -17,10 +17,10 @@
 	    case "png":
 	    case "tiff":
 	    	$fi = new FilesystemIterator($outputdir, FilesystemIterator::SKIP_DOTS);
-	    	$output = $outputdir . "visitor" . (iterator_count($fi) + 1) . "." . $ext;
+	    	$output = $outputdir . iterator_count($fi) . "." . $ext;
     		move_uploaded_file($tmpfilename,   $output);
     		file_put_contents("../rooms/museum-list.html", "\n<span>$text</span>", FILE_APPEND);
-    		file_put_contents("../rooms/img-list.html", "\n<img src=\"$output\"/>", FILE_APPEND);
+    		file_put_contents("../rooms/img-list.html", "\n<img class='image' src=\"$output\"/>", FILE_APPEND);
     		echo "Done!";
     		exit();
 	    break;
