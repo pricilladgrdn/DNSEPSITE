@@ -49,8 +49,10 @@ $(document).ready(function() {
 	             url: $form.attr("action"),
 	             success: function(data){
 	        		$("#output").text(data);
-	                $(".header").load(location.href + " .header > *");
-	                $(".images").load(location.href + " .images > *");
+	                $(".images").load("../rooms/img-list.html");
+	                $(".header").load("../rooms/museum-list.html");
+	                //$(".header").load(location.href + " .header > *");
+	                //$(".images").load(location.href + " .images > *");
 	             }
 	        });
 	    } else {
