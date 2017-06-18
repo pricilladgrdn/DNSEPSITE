@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	//YOU CAN TOUCH THAT ≚ㅅ≚
-	simultaneousImg = 10; // <-- number max of simultaneous hidden images at screen
+	simultaneousImg = 8; // <-- number max of simultaneous hidden images at screen
 	fullVisibleDuration = 2000; // <-- duration during which text has max opacity
 
 	//AAAAAND DON'T EVEN TRY TO LOOK UNDER

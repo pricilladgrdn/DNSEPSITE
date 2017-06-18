@@ -26,7 +26,7 @@
 	</div>
 
 	<form action="../php/uploadimage.php" method="post">
-		<span>X</span>
+		<span>✕</span>
 		<input id="text" type="text" name="text" placeholder="Provenance de l'image"/>
 		<input id="file" type="file" name="filename"/>
 		<input type="submit" name="submit" value="Send" method="post"/>
@@ -69,18 +69,14 @@
 		<p id="titre-feuille">Ne pas toucher</p>
 		<p>
 			<i>Typologies de l'exposition</i></br></br>
-			«&#8239;D'abord, un constat tout à fait trivial&#8239;: 
-à l’entrée de la plupart des musées 
-du monde sont énoncés 
-tout un ensemble d’instructions concernant le comportement à adopter lors de la visite : interdictions de boire, de manger, de fumer, 
-de courir, de faire trop de bruit… 
-Ces instructions font partie des bonnes manières qui se sont imposées progressivement dans le champ culturel au cours du temps. […] Le monde des arts plastiques s’est progressivement policé et en est venu à adopter tout un ensemble de comportements standards, comportements impliquant une forme de civilité et valable dans tous les musées du monde. Les instructions présentes sur les murs des musées nous renvoient directement à l’idée d’une autorité de l’art qui serait invisible.&#8239;»</br></br>
+			«&#8239;D'abord, un constat tout à fait trivial&#8239;: à l’entrée </br>
+			de la plupart des musées du monde sont énoncés tout un ensemble d’instructions concernant le comportement à adopter lors de la visite : interdictions de boire, de manger, de fumer, 
+			de courir, de faire trop de bruit… Ces instructions font partie des bonnes manières qui se sont imposées progressivement dans le champ culturel au cours du temps. […] Le monde des arts plastiques s’est progressivement policé et en est venu à adopter tout un ensemble de comportements standards, comportements impliquant une forme de civilité et valable dans tous les musées du monde. Les instructions présentes sur les murs des musées nous renvoient directement à l’idée d’une autorité de l’art qui serait invisible.&#8239;»</br></br>
 
-Jérôme Glicenstein, <i>L’art&#8239;: une histoire d’expositions,</i> Paris, PUF, 2009, p.87.</br></br>
+			Jérôme Glicenstein, <i>L’art&#8239;: une histoire d’expositions,</i> Paris, PUF, 2009, p.87.</br></br>
 
-Je vous invite à enrichir cette collecte en m'adressant vos images par <a href="mailto:degardin.pricilla@gmail.com">mail</a>. Vous contriburez ainsi à élargir cette analyse typologique des éléments de l'exposition.
-
-			
+			Je vous invite à enrichir cette collecte en m'adressant vos images en cliquant sur l'onglet «&#8239;participer&#8239;». 
+			Vous contriburez ainsi à élargir cette analyse typologique des éléments de l'exposition.
 		</p>
 	</div>
 
