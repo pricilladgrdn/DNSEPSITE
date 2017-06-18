@@ -1,4 +1,8 @@
 $(document).ready(function() {
+
+    $(".images").load("../rooms/img-list.html");
+    $(".header").load("../rooms/museum-list.html");
+    
 	hided = false;
 
 	$(document).on('mouseover mouseout', '.image', function(){
@@ -25,6 +29,7 @@ $(document).ready(function() {
 		$('.dropdown').show();
 		hided = false;
 	});
+
 
 	$('form').submit(function(e){
         e.preventDefault();
